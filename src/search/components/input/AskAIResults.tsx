@@ -7,8 +7,8 @@ import { ActionList, IconButton, Spinner } from '@primer/react'
 import {
   CheckIcon,
   CopilotIcon,
-  CopyIcon,
   FileIcon,
+  ShareIcon,
   ThumbsdownIcon,
   ThumbsupIcon,
 } from '@primer/octicons-react'
@@ -85,7 +85,14 @@ export function AskAIResults({
   }>('ai-query-cache', 1000, 7)
   const { isOpen: isCTAOpen, permanentDismiss: permanentlyDismissCTA } = useCTAPopoverContext()
 
-  const [isCopied, setCopied] = useClipboard(message, { successDuration: 1400 })
+  let copyUrl = ``
+  if (window?.location?.href) {
+    // Get base path from current URL
+    const url = new URL(window.location.href)
+    copyUrl = `${url.origin}/?search-overlay-open=true&search-overlay-ask-ai=true&search-overlay-input=${encodeURIComponent(query)}`
+  }
+
+  const [isCopied, setCopied] = useClipboard(copyUrl, { successDuration: 1399 })
   const [feedbackSelected, setFeedbackSelected] = useState<null | 'up' | 'down'>(null)
 
   const [conversationId, setConversationId] = useState<string>('')
@@ -373,7 +380,7 @@ export function AskAIResults({
   }, [query])
 
   return (
-    <div className={styles.container}>
+    <div id="ask-ai-result-container" role="region" className={styles.container}>
       {!aiCouldNotAnswer && references && references.length > 0 ? (
         <>
           <ActionList className={styles.referencesList} showDividers>
@@ -398,7 +405,6 @@ export function AskAIResults({
                       }}
                       key={`reference-${index}`}
                       id={`search-option-reference-${index + referencesIndexOffset}`}
-                      role="option"
                       tabIndex={-1}
                       onSelect={() => {
                         referenceOnSelect(source.url)
@@ -505,15 +511,17 @@ export function AskAIResults({
               boxShadow: 'unset',
               color: isCopied ? 'var(--fgColor-accent) !important;' : '',
             }}
-            icon={isCopied ? CheckIcon : CopyIcon}
+            icon={isCopied ? CheckIcon : ShareIcon}
             className="btn-octicon"
-            aria-label={t('ai.copy_answer')}
+            aria-label={
+              isCopied ? t('search.ai.share_copied_announcement') : t('search.ai.share_answer')
+            }
             onClick={() => {
               setCopied()
-              announce(t('ai.copied_announcement'))
+              announce(t('search.ai.share_copied_announcement'))
               sendEvent({
                 type: EventType.clipboard,
-                clipboard_operation: 'copy',
+                clipboard_operation: 'share',
                 eventGroupKey: ASK_AI_EVENT_GROUP,
                 eventGroupId: askAIEventGroupId.current,
               })

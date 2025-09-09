@@ -3362,10 +3362,120 @@
           "isRequired": true,
           "childParamsGroups": [
             {
-              "type": "null",
+              "type": "object or null",
               "name": "app",
-              "description": "",
-              "isRequired": true
+              "description": "<p>GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.</p>",
+              "isRequired": true,
+              "childParamsGroups": [
+                {
+                  "type": "integer",
+                  "name": "id",
+                  "description": "<p>Unique identifier of the GitHub app</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "slug",
+                  "description": "<p>The slug name of the GitHub app</p>"
+                },
+                {
+                  "type": "string",
+                  "name": "node_id",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "client_id",
+                  "description": ""
+                },
+                {
+                  "type": "object",
+                  "name": "owner",
+                  "description": "<p>A GitHub user.</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "name",
+                  "description": "<p>The name of the GitHub app</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string or null",
+                  "name": "description",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "external_url",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "html_url",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "created_at",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "updated_at",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "object",
+                  "name": "permissions",
+                  "description": "<p>The set of permissions for the GitHub app</p>",
+                  "isRequired": true,
+                  "childParamsGroups": [
+                    {
+                      "type": "string",
+                      "name": "issues",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "checks",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "metadata",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "contents",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "deployments",
+                      "description": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "array of strings",
+                  "name": "events",
+                  "description": "<p>The list of events for the GitHub app. Note that the <code>installation_target</code>, <code>security_advisory</code>, and <code>meta</code> events are not included because they are global events and not specific to an installation.</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "integer",
+                  "name": "installations_count",
+                  "description": "<p>The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.</p>"
+                }
+              ]
             },
             {
               "type": "object",
@@ -3483,28 +3593,13 @@
                     {
                       "type": "array of strings",
                       "name": "events",
-                      "description": "<p>The list of events for the GitHub app</p>",
+                      "description": "<p>The list of events for the GitHub app. Note that the <code>installation_target</code>, <code>security_advisory</code>, and <code>meta</code> events are not included because they are global events and not specific to an installation.</p>",
                       "isRequired": true
                     },
                     {
                       "type": "integer",
                       "name": "installations_count",
-                      "description": "<p>The number of installations associated with the GitHub app</p>"
-                    },
-                    {
-                      "type": "string",
-                      "name": "client_secret",
-                      "description": ""
-                    },
-                    {
-                      "type": "string or null",
-                      "name": "webhook_secret",
-                      "description": ""
-                    },
-                    {
-                      "type": "string",
-                      "name": "pem",
-                      "description": ""
+                      "description": "<p>The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.</p>"
                     }
                   ]
                 },
@@ -4879,10 +4974,120 @@
           "isRequired": true,
           "childParamsGroups": [
             {
-              "type": "null",
+              "type": "object or null",
               "name": "app",
-              "description": "",
-              "isRequired": true
+              "description": "<p>GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.</p>",
+              "isRequired": true,
+              "childParamsGroups": [
+                {
+                  "type": "integer",
+                  "name": "id",
+                  "description": "<p>Unique identifier of the GitHub app</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "slug",
+                  "description": "<p>The slug name of the GitHub app</p>"
+                },
+                {
+                  "type": "string",
+                  "name": "node_id",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "client_id",
+                  "description": ""
+                },
+                {
+                  "type": "object",
+                  "name": "owner",
+                  "description": "<p>A GitHub user.</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "name",
+                  "description": "<p>The name of the GitHub app</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string or null",
+                  "name": "description",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "external_url",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "html_url",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "created_at",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "updated_at",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "object",
+                  "name": "permissions",
+                  "description": "<p>The set of permissions for the GitHub app</p>",
+                  "isRequired": true,
+                  "childParamsGroups": [
+                    {
+                      "type": "string",
+                      "name": "issues",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "checks",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "metadata",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "contents",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "deployments",
+                      "description": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "array of strings",
+                  "name": "events",
+                  "description": "<p>The list of events for the GitHub app. Note that the <code>installation_target</code>, <code>security_advisory</code>, and <code>meta</code> events are not included because they are global events and not specific to an installation.</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "integer",
+                  "name": "installations_count",
+                  "description": "<p>The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.</p>"
+                }
+              ]
             },
             {
               "type": "object",
@@ -5000,28 +5205,13 @@
                     {
                       "type": "array of strings",
                       "name": "events",
-                      "description": "<p>The list of events for the GitHub app</p>",
+                      "description": "<p>The list of events for the GitHub app. Note that the <code>installation_target</code>, <code>security_advisory</code>, and <code>meta</code> events are not included because they are global events and not specific to an installation.</p>",
                       "isRequired": true
                     },
                     {
                       "type": "integer",
                       "name": "installations_count",
-                      "description": "<p>The number of installations associated with the GitHub app</p>"
-                    },
-                    {
-                      "type": "string",
-                      "name": "client_secret",
-                      "description": ""
-                    },
-                    {
-                      "type": "string or null",
-                      "name": "webhook_secret",
-                      "description": ""
-                    },
-                    {
-                      "type": "string",
-                      "name": "pem",
-                      "description": ""
+                      "description": "<p>The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.</p>"
                     }
                   ]
                 },
@@ -6397,10 +6587,120 @@
           "isRequired": true,
           "childParamsGroups": [
             {
-              "type": "null",
+              "type": "object or null",
               "name": "app",
-              "description": "",
-              "isRequired": true
+              "description": "<p>GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.</p>",
+              "isRequired": true,
+              "childParamsGroups": [
+                {
+                  "type": "integer",
+                  "name": "id",
+                  "description": "<p>Unique identifier of the GitHub app</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "slug",
+                  "description": "<p>The slug name of the GitHub app</p>"
+                },
+                {
+                  "type": "string",
+                  "name": "node_id",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "client_id",
+                  "description": ""
+                },
+                {
+                  "type": "object",
+                  "name": "owner",
+                  "description": "<p>A GitHub user.</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "name",
+                  "description": "<p>The name of the GitHub app</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string or null",
+                  "name": "description",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "external_url",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "html_url",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "created_at",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "updated_at",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "object",
+                  "name": "permissions",
+                  "description": "<p>The set of permissions for the GitHub app</p>",
+                  "isRequired": true,
+                  "childParamsGroups": [
+                    {
+                      "type": "string",
+                      "name": "issues",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "checks",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "metadata",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "contents",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "deployments",
+                      "description": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "array of strings",
+                  "name": "events",
+                  "description": "<p>The list of events for the GitHub app. Note that the <code>installation_target</code>, <code>security_advisory</code>, and <code>meta</code> events are not included because they are global events and not specific to an installation.</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "integer",
+                  "name": "installations_count",
+                  "description": "<p>The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.</p>"
+                }
+              ]
             },
             {
               "type": "object",
@@ -6518,28 +6818,13 @@
                     {
                       "type": "array of strings",
                       "name": "events",
-                      "description": "<p>The list of events for the GitHub app</p>",
+                      "description": "<p>The list of events for the GitHub app. Note that the <code>installation_target</code>, <code>security_advisory</code>, and <code>meta</code> events are not included because they are global events and not specific to an installation.</p>",
                       "isRequired": true
                     },
                     {
                       "type": "integer",
                       "name": "installations_count",
-                      "description": "<p>The number of installations associated with the GitHub app</p>"
-                    },
-                    {
-                      "type": "string",
-                      "name": "client_secret",
-                      "description": ""
-                    },
-                    {
-                      "type": "string or null",
-                      "name": "webhook_secret",
-                      "description": ""
-                    },
-                    {
-                      "type": "string",
-                      "name": "pem",
-                      "description": ""
+                      "description": "<p>The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.</p>"
                     }
                   ]
                 },
@@ -7927,10 +8212,120 @@
           "isRequired": true,
           "childParamsGroups": [
             {
-              "type": "null",
+              "type": "object or null",
               "name": "app",
-              "description": "",
-              "isRequired": true
+              "description": "<p>GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.</p>",
+              "isRequired": true,
+              "childParamsGroups": [
+                {
+                  "type": "integer",
+                  "name": "id",
+                  "description": "<p>Unique identifier of the GitHub app</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "slug",
+                  "description": "<p>The slug name of the GitHub app</p>"
+                },
+                {
+                  "type": "string",
+                  "name": "node_id",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "client_id",
+                  "description": ""
+                },
+                {
+                  "type": "object",
+                  "name": "owner",
+                  "description": "<p>A GitHub user.</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "name",
+                  "description": "<p>The name of the GitHub app</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "string or null",
+                  "name": "description",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "external_url",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "html_url",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "created_at",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string",
+                  "name": "updated_at",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "object",
+                  "name": "permissions",
+                  "description": "<p>The set of permissions for the GitHub app</p>",
+                  "isRequired": true,
+                  "childParamsGroups": [
+                    {
+                      "type": "string",
+                      "name": "issues",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "checks",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "metadata",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "contents",
+                      "description": ""
+                    },
+                    {
+                      "type": "string",
+                      "name": "deployments",
+                      "description": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "array of strings",
+                  "name": "events",
+                  "description": "<p>The list of events for the GitHub app. Note that the <code>installation_target</code>, <code>security_advisory</code>, and <code>meta</code> events are not included because they are global events and not specific to an installation.</p>",
+                  "isRequired": true
+                },
+                {
+                  "type": "integer",
+                  "name": "installations_count",
+                  "description": "<p>The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.</p>"
+                }
+              ]
             },
             {
               "type": "object",
@@ -8048,28 +8443,13 @@
                     {
                       "type": "array of strings",
                       "name": "events",
-                      "description": "<p>The list of events for the GitHub app</p>",
+                      "description": "<p>The list of events for the GitHub app. Note that the <code>installation_target</code>, <code>security_advisory</code>, and <code>meta</code> events are not included because they are global events and not specific to an installation.</p>",
                       "isRequired": true
                     },
                     {
                       "type": "integer",
                       "name": "installations_count",
-                      "description": "<p>The number of installations associated with the GitHub app</p>"
-                    },
-                    {
-                      "type": "string",
-                      "name": "client_secret",
-                      "description": ""
-                    },
-                    {
-                      "type": "string or null",
-                      "name": "webhook_secret",
-                      "description": ""
-                    },
-                    {
-                      "type": "string",
-                      "name": "pem",
-                      "description": ""
+                      "description": "<p>The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.</p>"
                     }
                   ]
                 },
@@ -52704,28 +53084,13 @@
                 {
                   "type": "array of strings",
                   "name": "events",
-                  "description": "<p>The list of events for the GitHub app</p>",
+                  "description": "<p>The list of events for the GitHub app. Note that the <code>installation_target</code>, <code>security_advisory</code>, and <code>meta</code> events are not included because they are global events and not specific to an installation.</p>",
                   "isRequired": true
                 },
                 {
                   "type": "integer",
                   "name": "installations_count",
-                  "description": "<p>The number of installations associated with the GitHub app</p>"
-                },
-                {
-                  "type": "string",
-                  "name": "client_secret",
-                  "description": ""
-                },
-                {
-                  "type": "string or null",
-                  "name": "webhook_secret",
-                  "description": ""
-                },
-                {
-                  "type": "string",
-                  "name": "pem",
-                  "description": ""
+                  "description": "<p>The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.</p>"
                 }
               ]
             },
@@ -54072,28 +54437,13 @@
                 {
                   "type": "array of strings",
                   "name": "events",
-                  "description": "<p>The list of events for the GitHub app</p>",
+                  "description": "<p>The list of events for the GitHub app. Note that the <code>installation_target</code>, <code>security_advisory</code>, and <code>meta</code> events are not included because they are global events and not specific to an installation.</p>",
                   "isRequired": true
                 },
                 {
                   "type": "integer",
                   "name": "installations_count",
-                  "description": "<p>The number of installations associated with the GitHub app</p>"
-                },
-                {
-                  "type": "string",
-                  "name": "client_secret",
-                  "description": ""
-                },
-                {
-                  "type": "string or null",
-                  "name": "webhook_secret",
-                  "description": ""
-                },
-                {
-                  "type": "string",
-                  "name": "pem",
-                  "description": ""
+                  "description": "<p>The number of installations associated with the GitHub app. Only returned when the integration is requesting details about itself.</p>"
                 }
               ]
             },
@@ -84487,7 +84837,7 @@
           "type": "object",
           "name": "hook",
           "in": "body",
-          "description": "<p>The modified webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.</p>",
+          "description": "<p>The deleted webhook. This will contain different keys based on the type of webhook it is: repository, organization, business, app, or GitHub Marketplace.</p>",
           "isRequired": true,
           "childParamsGroups": [
             {
@@ -84540,7 +84890,7 @@
             {
               "type": "array of strings",
               "name": "events",
-              "description": "<p>undefinedSupported values are: <code>*</code>, <code>branch_protection_rule</code>, <code>check_run</code>, <code>check_suite</code>, <code>code_scanning_alert</code>, <code>commit_comment</code>, <code>create</code>, <code>delete</code>, <code>deployment</code>, <code>deployment_status</code>, <code>deploy_key</code>, <code>discussion</code>, <code>discussion_comment</code>, <code>fork</code>, <code>gollum</code>, <code>issues</code>, <code>issue_comment</code>, <code>label</code>, <code>member</code>, <code>membership</code>, <code>meta</code>, <code>milestone</code>, <code>organization</code>, <code>org_block</code>, <code>package</code>, <code>page_build</code>, <code>project</code>, <code>project_card</code>, <code>project_column</code>, <code>public</code>, <code>pull_request</code>, <code>pull_request_review</code>, <code>pull_request_review_comment</code>, <code>pull_request_review_thread</code>, <code>push</code>, <code>registry_package</code>, <code>release</code>, <code>repository</code>, <code>repository_import</code>, <code>repository_vulnerability_alert</code>, <code>secret_scanning_alert</code>, <code>secret_scanning_alert_location</code>, <code>security_and_analysis</code>, <code>star</code>, <code>status</code>, <code>team</code>, <code>team_add</code>, <code>watch</code>, <code>workflow_job</code>, <code>workflow_run</code>, <code>repository_dispatch</code>, <code>projects_v2_item</code></p>",
+              "description": "<p>Supported values are: <code>*</code>, <code>branch_protection_rule</code>, <code>check_run</code>, <code>check_suite</code>, <code>code_scanning_alert</code>, <code>commit_comment</code>, <code>create</code>, <code>delete</code>, <code>deployment</code>, <code>deployment_status</code>, <code>deploy_key</code>, <code>discussion</code>, <code>discussion_comment</code>, <code>fork</code>, <code>gollum</code>, <code>issues</code>, <code>issue_comment</code>, <code>label</code>, <code>member</code>, <code>membership</code>, <code>meta</code>, <code>milestone</code>, <code>organization</code>, <code>org_block</code>, <code>package</code>, <code>page_build</code>, <code>project</code>, <code>project_card</code>, <code>project_column</code>, <code>public</code>, <code>pull_request</code>, <code>pull_request_review</code>, <code>pull_request_review_comment</code>, <code>pull_request_review_thread</code>, <code>push</code>, <code>registry_package</code>, <code>release</code>, <code>repository</code>, <code>repository_import</code>, <code>repository_vulnerability_alert</code>, <code>secret_scanning_alert</code>, <code>secret_scanning_alert_location</code>, <code>security_and_analysis</code>, <code>star</code>, <code>status</code>, <code>team</code>, <code>team_add</code>, <code>watch</code>, <code>workflow_job</code>, <code>workflow_run</code>, <code>repository_dispatch</code>, <code>projects_v2_item</code></p>",
               "isRequired": true
             },
             {
@@ -194277,6 +194627,12 @@
                   "isRequired": true
                 },
                 {
+                  "type": "string or null",
+                  "name": "digest",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
                   "type": "string",
                   "name": "state",
                   "description": "<p>State of the release asset.</p>",
@@ -194838,6 +195194,12 @@
                 {
                   "type": "integer",
                   "name": "size",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string or null",
+                  "name": "digest",
                   "description": "",
                   "isRequired": true
                 },
@@ -195464,6 +195826,12 @@
                 {
                   "type": "integer",
                   "name": "size",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string or null",
+                  "name": "digest",
                   "description": "",
                   "isRequired": true
                 },
@@ -196767,6 +197135,12 @@
                 {
                   "type": "integer",
                   "name": "size",
+                  "description": "",
+                  "isRequired": true
+                },
+                {
+                  "type": "string or null",
+                  "name": "digest",
                   "description": "",
                   "isRequired": true
                 },
